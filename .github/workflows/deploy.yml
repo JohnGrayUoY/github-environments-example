@@ -1,0 +1,14 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: unbuntu-latest
+    environment: development
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
