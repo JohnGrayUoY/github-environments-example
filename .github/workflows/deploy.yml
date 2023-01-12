@@ -32,13 +32,22 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     environment: development
+    steps:
+      - name: Run
+        run: echo Deploying to Development
 
   deploy-staging:
     needs: [build]
     runs-on: ubuntu-latest
     environment: staging
+    steps:
+      - name: Run
+        run: echo Deploying to Staging
 
   deploy-production:
     needs: [deploy-staging]
     runs-on: ubuntu-latest
     environment: production
+    steps:
+      - name: Run
+        run: echo Deploying to Production
